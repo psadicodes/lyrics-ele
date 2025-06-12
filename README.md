@@ -1,73 +1,114 @@
-# Welcome to your Lovable project
+🧪 ChemLyrics — Periodic Table Style Lyrics Animator
+Create lyric videos like never before. Mix Chemistry, Coding, Emojis, and Physics Symbols to make your lyrics explode with style.
 
-## Project info
+<!-- Replace with a GIF or image of the tool in action -->
 
-**URL**: https://lovable.dev/projects/98dc7e07-c561-4f2d-8444-4ace049bd424
+🚀 Features
+🧬 Chemistry Mode: Words broken down into real periodic table elements (preferring two-letter symbols first, then one-letter).
 
-## How can I edit this code?
+❤️ Emoji Mode: Can’t find the element? Use expressive emojis for common words like love, fire, heart, dance.
 
-There are several ways of editing your application.
+🧲 Physics & Math Fallback: Still unmatched? Uses scientific unit symbols (like Ω, µ, Å, ℃) to fill every character gap.
 
-**Use Lovable**
+✨ Block Style Rendering: Everything styled like a periodic table cell — element name, symbol, and atomic number.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/98dc7e07-c561-4f2d-8444-4ace049bd424) and start prompting.
+⏱️ Timestamp Sync: Supports timed lyrics to generate animated visuals in sync with the music.
 
-Changes made via Lovable will be committed automatically to this repo.
+🎬 Example Output
+text
+Copy
+Edit
+Word: LOVE
 
-**Use your preferred IDE**
+→ [Li] [O] [V] [e⁻]
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+OR if not found in table:
+→ ❤️  (emoji fallback)
+Each word becomes a stack of stylish chemistry blocks with real or symbolic meaning!
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🔧 How It Works
+Input your lyrics and timestamps (optional).
 
-Follow these steps:
+The app parses each word.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+For every word:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+🔍 Check Emoji Map → if found, use emoji.
 
-# Step 3: Install the necessary dependencies.
-npm i
+🧪 Match 2-letter Element Symbols → if matched, use.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+🧪 Else, Match 1-letter Elements.
+
+🧮 Fallback with Physics/Math Symbol Map.
+
+Words are rendered vertically, preserving timestamp breaks.
+
+Export animation.
+
+📂 File Structure
+bash
+Copy
+Edit
+/src
+  /components
+    LyricsDisplay.tsx    # Core display logic
+  /utils
+    periodicTable.ts     # Element/emoji/physics matching logic
+  /assets
+    periodicData.json    # Element data (118 real elements)
+    emojiMap.ts          # Word-to-emoji dictionary
+    physicsMap.ts        # A-Z physics/maths symbol fallback
+🧠 Fallback Symbol Table (Physics/Math Style)
+A = Å	B = B	C = ℃	D = D	E = e⁻	F = F
+G = G	H = H	I = I	J = J	K = K	L = L
+M = m	N = N	O = Ω	P = P	Q = Q	R = R
+S = S	T = T	U = µ	V = V	W = W	X = χ
+Y = γ	Z = Z				
+
+🧪 Example Emoji Map
+ts
+Copy
+Edit
+{
+  "love": "❤️",
+  "fire": "🔥",
+  "music": "🎶",
+  "dance": "💃",
+  "heart": "💖",
+  "girl": "👧",
+  "boy": "👦"
+}
+💡 Why This Project?
+"Topper se impress karne ke liye chemistry ki kitaab nahi, code likha."
+
+From a nerdy backbencher to a coding chemist — this app was born out of heartbreak, topped with humor, and spiced with science.
+
+🛠️ Setup Instructions
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/chemsong-lyrics-visualizer
+cd chemsong-lyrics-visualizer
+npm install
 npm run dev
-```
+📦 Tech Stack
+React + TypeScript
 
-**Edit a file directly in GitHub**
+TailwindCSS
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Vite or Next.js
 
-**Use GitHub Codespaces**
+Framer Motion (for animations)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Custom algorithm for symbol parsing
 
-## What technologies are used for this project?
+✨ Inspiration
+🎵 Inspired by "Eenie Meenie Miney Mo Lova" and real periodic table beauty
+🔬 Adds a twist of chemistry, emoji culture, and science symbolism
+🎥 Meant for Instagram Reels, Shorts, and YouTube lyric videos
 
-This project is built with:
+🙌 Contribute
+Feel free to fork, add new emojis, or suggest better scientific symbols!
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/98dc7e07-c561-4f2d-8444-4ace049bd424) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+📸 Logo & Favicon
+Designed using AI and vector graphics, symbolizing music 🎶 + chemistry ⚗️.
