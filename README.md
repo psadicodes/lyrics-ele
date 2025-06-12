@@ -1,74 +1,88 @@
-🧪 ChemLyrics — Periodic Table Style Lyrics Animator
-Create lyric videos like never before. Mix Chemistry, Coding, Emojis, and Physics Symbols to make your lyrics explode with style.
+# 🧪 ChemLyrics — Periodic Table Style Lyrics Animator
 
-<!-- Replace with a GIF or image of the tool in action -->
+Create lyric videos like never before. Mix **Chemistry**, **Coding**, **Emojis**, and **Physics Symbols** to make your lyrics *explode with style*.
 
-🚀 Features
-🧬 Chemistry Mode: Words broken down into real periodic table elements (preferring two-letter symbols first, then one-letter).
+![App Preview](preview.gif) <!-- Replace with actual GIF or image of the app output -->
 
-❤️ Emoji Mode: Can’t find the element? Use expressive emojis for common words like love, fire, heart, dance.
+---
 
-🧲 Physics & Math Fallback: Still unmatched? Uses scientific unit symbols (like Ω, µ, Å, ℃) to fill every character gap.
+## 🚀 Features
 
-✨ Block Style Rendering: Everything styled like a periodic table cell — element name, symbol, and atomic number.
+- 🧬 **Chemistry Mode**: Words broken down into real periodic table elements (preferring two-letter symbols first, then one-letter).
+- ❤️ **Emoji Mode**: Can’t find the element? Use expressive emojis for common words like `love`, `fire`, `heart`, `dance`.
+- 🧲 **Physics & Math Fallback**: Still unmatched? Uses scientific unit symbols (like `Ω`, `µ`, `Å`, `℃`) to fill every character gap.
+- ✨ **Block Style Rendering**: Everything styled like a periodic table cell — element name, symbol, and atomic number.
+- ⏱️ **Timestamp Sync**: Supports timed lyrics to generate animated visuals in sync with the music.
 
-⏱️ Timestamp Sync: Supports timed lyrics to generate animated visuals in sync with the music.
+---
 
-🎬 Example Output
-text
-Copy
-Edit
+## 🎬 Example Output
+
 Word: LOVE
 
 → [Li] [O] [V] [e⁻]
 
 OR if not found in table:
-→ ❤️  (emoji fallback)
+→ ❤️ (emoji fallback)
+
+yaml
+Copy
+Edit
+
 Each word becomes a stack of stylish chemistry blocks with real or symbolic meaning!
 
-🔧 How It Works
-Input your lyrics and timestamps (optional).
+---
 
-The app parses each word.
+## 🔧 How It Works
 
-For every word:
+1. Input your lyrics and timestamps (optional).
+2. The app parses each word.
+3. For every word:
+   - 🔍 **Check Emoji Map** → if found, use emoji.
+   - 🧪 **Match 2-letter Element Symbols** → if matched, use.
+   - 🧪 **Else, Match 1-letter Elements**.
+   - 🧮 **Fallback with Physics/Math Symbol Map**.
+4. Words are rendered vertically, preserving timestamp breaks.
+5. Export animation.
 
-🔍 Check Emoji Map → if found, use emoji.
+---
 
-🧪 Match 2-letter Element Symbols → if matched, use.
+## 📂 File Structure
 
-🧪 Else, Match 1-letter Elements.
-
-🧮 Fallback with Physics/Math Symbol Map.
-
-Words are rendered vertically, preserving timestamp breaks.
-
-Export animation.
-
-📂 File Structure
-bash
-Copy
-Edit
 /src
-  /components
-    LyricsDisplay.tsx    # Core display logic
-  /utils
-    periodicTable.ts     # Element/emoji/physics matching logic
-  /assets
-    periodicData.json    # Element data (118 real elements)
-    emojiMap.ts          # Word-to-emoji dictionary
-    physicsMap.ts        # A-Z physics/maths symbol fallback
-🧠 Fallback Symbol Table (Physics/Math Style)
-A = Å	B = B	C = ℃	D = D	E = e⁻	F = F
-G = G	H = H	I = I	J = J	K = K	L = L
-M = m	N = N	O = Ω	P = P	Q = Q	R = R
-S = S	T = T	U = µ	V = V	W = W	X = χ
-Y = γ	Z = Z				
+/components
+LyricsDisplay.tsx # Core display logic
+/utils
+periodicTable.ts # Element/emoji/physics matching logic
+/assets
+periodicData.json # Element data (118 real elements)
+emojiMap.ts # Word-to-emoji dictionary
+physicsMap.ts # A–Z fallback symbol dictionary
 
-🧪 Example Emoji Map
-ts
+mathematica
 Copy
 Edit
+
+---
+
+## 🧠 Fallback Symbol Map (Physics/Math Style)
+
+| A = Å (Angstrom) | B = B (Magnetic Field) | C = ℃ (Celsius)       |
+|------------------|------------------------|------------------------|
+| D = D (Debye)    | E = e⁻ (Electron)      | F = F (Farad)          |
+| G = G (Gravity)  | H = H (Henry/Planck)   | I = I (Current)        |
+| J = J (Joule)    | K = K (Kelvin)         | L = L (Liter)          |
+| M = m (Mass)     | N = N (Newton)         | O = Ω (Ohm)            |
+| P = P (Power)    | Q = Q (Charge)         | R = R (Resistance)     |
+| S = S (Siemens)  | T = T (Tesla)          | U = µ (Micro/Unit)     |
+| V = V (Volt)     | W = W (Watt)           | X = χ (Chi)            |
+| Y = γ (Gamma)    | Z = Z (Atomic Number)  |
+
+---
+
+## 🧪 Emoji Word Map Example
+
+```ts
 {
   "love": "❤️",
   "fire": "🔥",
@@ -76,8 +90,13 @@ Edit
   "dance": "💃",
   "heart": "💖",
   "girl": "👧",
-  "boy": "👦"
+  "boy": "👦",
+  "happy": "😊",
+  "sad": "😢",
+  "cool": "😎"
 }
+You can expand this map easily in emojiMap.ts.
+
 💡 Why This Project?
 "Topper se impress karne ke liye chemistry ki kitaab nahi, code likha."
 
@@ -98,9 +117,9 @@ TailwindCSS
 
 Vite or Next.js
 
-Framer Motion (for animations)
+Framer Motion
 
-Custom algorithm for symbol parsing
+Custom splitting + symbol logic
 
 ✨ Inspiration
 🎵 Inspired by "Eenie Meenie Miney Mo Lova" and real periodic table beauty
@@ -108,7 +127,16 @@ Custom algorithm for symbol parsing
 🎥 Meant for Instagram Reels, Shorts, and YouTube lyric videos
 
 🙌 Contribute
-Feel free to fork, add new emojis, or suggest better scientific symbols!
+Feel free to fork, improve symbol sets, or add your own visual themes!
 
 📸 Logo & Favicon
-Designed using AI and vector graphics, symbolizing music 🎶 + chemistry ⚗️.
+Designed using AI and vector graphics — combining 🎶 + ⚗️ + 💖
+(See public/favicon.ico and assets/logo.svg)
+
+yaml
+Copy
+Edit
+
+---
+
+Let me know if you want me to generate the actual `.ts` files like `emojiMap.ts`, `physicsMap.ts`, or
